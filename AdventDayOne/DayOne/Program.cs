@@ -4,7 +4,10 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            PartOne.PartOneComplete();
+            //Listed by LocationID. 
+            // Pair up the numbers. Smallest to smallest. 
+            
         }
     }
 }
