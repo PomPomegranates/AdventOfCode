@@ -4,10 +4,12 @@
     {
         static void Main(string[] args)
         {
-            PartOne.PartOneComplete();
+            //Console.WriteLine(PartOne.CompletePartOne());
+            Console.WriteLine(PartTwo.CompletePartTwo());
+            //Console.WriteLine(differences.Sum());
             //Listed by LocationID. 
             // Pair up the numbers. Smallest to smallest. 
-            
+
         }
     }
 }
