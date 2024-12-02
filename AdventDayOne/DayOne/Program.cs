@@ -4,7 +4,7 @@
     {
         static void Main(string[] args)
         {
-            //Console.WriteLine(PartOne.CompletePartOne());
+            Console.WriteLine(PartOne.CompletePartOne());
             Console.WriteLine(PartTwo.CompletePartTwo());
             //Console.WriteLine(differences.Sum());
             //Listed by LocationID. 
