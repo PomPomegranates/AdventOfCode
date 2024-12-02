@@ -20,8 +20,19 @@ namespace DayTwoTests
         [Test]
         public void SafeLevelTest()
         {
+            List<List<int>> testList = FileReader.UnpackLines("./TestData.txt");
+            List<bool> safeChecking = SafetyTester.SafetyChecker(testList);
+            safeChecking.Should().BeEquivalentTo(new List<bool> { true, false, false, false, false, true });
+        }
 
-            Assert.Pass();
+        [Test]
+
+        public void SafeCountChecker()
+        {
+            List<List<int>> testList = FileReader.UnpackLines("./TestData.txt");
+            List<bool> safeChecking = SafetyTester.SafetyChecker(testList);
+
+            safeChecking.Where(x => x.Equals(true)).ToList().Count().Should().Be(2);
         }
     }
 }
