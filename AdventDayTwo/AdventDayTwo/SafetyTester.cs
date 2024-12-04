@@ -18,24 +18,29 @@ namespace AdventDayTwo
                     if (list[i] < list[i + 1])
                     {
                         isAscending.Add(true);
+                        if (list[i + 1] - list[i] > 4)
+                        {
+                            return false;
+                        }
                     }
                     else
                     {
                         isAscending.Add(false);
+                        if (list[i] - list[i + 1] > 4)
+                        {
+                            return false;
+                        }
                     }
-                    if (Math.Abs(list[i]) - Math.Abs(list[i + 1]) > 2)
-                    {
-                        return false;
-                    }
+                    
 
                 }
-                if (isAscending.Contains(false))
+                if (list.Where(x => x.Equals(true)).ToList().Count == list.Count-1 || list.Where(x => x.Equals(false)).ToList().Count == list.Count-1)
                 {
-                    return false;
+                    return true;
                 }
                 else
                 {
-                    return true;
+                    return false;
                 }
 
             }).ToList();

@@ -34,5 +34,15 @@ namespace DayTwoTests
 
             safeChecking.Where(x => x.Equals(true)).ToList().Count().Should().Be(2);
         }
+        [Test]
+
+        public void SafeCountCheckerBiggerDataSet()
+        {
+            List<List<int>> testList = FileReader.UnpackLines("./SecondTestData.txt");
+            List<bool> safeChecking = SafetyTester.SafetyChecker(testList);
+
+            safeChecking.Where(x => x.Equals(true)).ToList().Count().Should().Be(2);
+        }
+
     }
 }
