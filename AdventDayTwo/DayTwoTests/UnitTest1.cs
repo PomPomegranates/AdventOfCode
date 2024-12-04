@@ -13,7 +13,7 @@ namespace DayTwoTests
             List<List<int>> fullList = FileReader.UnpackLines("./AdventDataDay2.txt");
 
             fullList[0].Should().BeEquivalentTo(new List<int> { 5, 6, 7, 10, 13, 16, 13, });
-            fullList[3].Should().BeEquivalentTo(new List<int> { 44, 46, 48, 49, 52, 55, 56, 62 });
+            fullList[^1].Should().BeEquivalentTo(new List<int> { 69, 70, 71, 74, 75, 77 });
 
         }
 
@@ -35,14 +35,14 @@ namespace DayTwoTests
             safeChecking.Where(x => x.Equals(true)).ToList().Count().Should().Be(2);
         }
         [Test]
-
-        public void SafeCountCheckerBiggerDataSet()
+        public void SafeCountCheckerSafetyDampener()
         {
-            List<List<int>> testList = FileReader.UnpackLines("./SecondTestData.txt");
+            List<List<int>> testList = FileReader.UnpackLines("./TestData.txt");
             List<bool> safeChecking = SafetyTester.SafetyChecker(testList);
-
-            safeChecking.Where(x => x.Equals(true)).ToList().Count().Should().Be(2);
+            //var checkForEachRemoved = 
+            safeChecking.Where(x => x.Equals(true)).ToList().Count().Should().Be(4);
         }
+
 
     }
 }
